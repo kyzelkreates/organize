@@ -1,4 +1,9 @@
-const pageTitles = { dashboard:'Dashboard', projects:'Projects', 'project-detail':'Project Detail', prompts:'Prompt Vault', errors:'Error Centre', 'repair-plans':'Repair Plans', 'import-export':'Import / Export', settings:'Settings' };
+const pageTitles = {
+  dashboard:'Dashboard', projects:'Projects', 'project-detail':'Project Detail',
+  prompts:'Prompt Vault', errors:'Error Centre', 'repair-plans':'Repair Plans',
+  'key-vault':'Key Vault', 'ai-playground':'AI Playground',
+  'import-export':'Import / Export', settings:'Settings'
+};
 export function renderTopBar(currentPage, state) {
   return `<div class="topbar-inner">
     <div style="display:flex;align-items:center;gap:12px;">
@@ -7,7 +12,7 @@ export function renderTopBar(currentPage, state) {
     </div>
     <div class="topbar-right">
       <span class="topbar-owner">${state.app.owner||'Kyzel Kreates'}</span>
-      <span class="topbar-version">v${state.app.version||'1.0.0'}</span>
+      <span class="topbar-version">v${state.app.version||'1.1.0'}</span>
     </div>
   </div>
   <div class="sidebar-overlay" id="sidebar-overlay"></div>`;
