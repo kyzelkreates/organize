@@ -8,9 +8,13 @@ import { renderProjectDetail } from './pages/ProjectDetailPage.js';
 import { renderPrompts } from './pages/PromptsPage.js';
 import { renderErrorCentre } from './pages/ErrorCentrePage.js';
 import { renderRepairPlans } from './pages/RepairPlansPage.js';
+import { renderKeyVault } from './pages/KeyVaultPage.js';
+import { renderAIPlayground } from './pages/AIPlaygroundPage.js';
 import { renderImportExport } from './pages/ImportExportPage.js';
 import { renderSettings } from './pages/SettingsPage.js';
 import './components/TopBar.js';
+import './pages/KeyVaultPage.js';
+import './pages/AIPlaygroundPage.js';
 
 let currentPage = 'dashboard', currentParams = {};
 
@@ -24,11 +28,19 @@ function render() {
   if (sidebar) sidebar.innerHTML = renderSidebar(currentPage);
   if (topbar)  topbar.innerHTML  = renderTopBar(currentPage, state);
   if (page) {
-    const map = { dashboard: renderDashboard, projects: renderProjects, prompts: renderPrompts,
-      errors: renderErrorCentre, 'repair-plans': renderRepairPlans,
-      'import-export': renderImportExport, settings: renderSettings };
-    if (currentPage === 'project-detail') page.innerHTML = renderProjectDetail(state, currentParams);
-    else page.innerHTML = (map[currentPage] || renderDashboard)(state);
+    switch(currentPage) {
+      case 'dashboard':      page.innerHTML = renderDashboard(state); break;
+      case 'projects':       page.innerHTML = renderProjects(state); break;
+      case 'project-detail': page.innerHTML = renderProjectDetail(state, currentParams); break;
+      case 'prompts':        page.innerHTML = renderPrompts(state); break;
+      case 'errors':         page.innerHTML = renderErrorCentre(state); break;
+      case 'repair-plans':   page.innerHTML = renderRepairPlans(state); break;
+      case 'key-vault':      page.innerHTML = renderKeyVault(state); break;
+      case 'ai-playground':  page.innerHTML = renderAIPlayground(state); break;
+      case 'import-export':  page.innerHTML = renderImportExport(state); break;
+      case 'settings':       page.innerHTML = renderSettings(state); break;
+      default:               page.innerHTML = renderDashboard(state);
+    }
   }
   document.querySelectorAll('[data-nav]').forEach(el => el.addEventListener('click', e => { e.preventDefault(); navigate(el.dataset.nav); }));
   document.querySelectorAll('[data-project-id]').forEach(el => el.addEventListener('click', () => navigate('/projects/' + el.dataset.projectId)));
