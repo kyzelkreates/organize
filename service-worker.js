@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ap3x-os-v1';
+const CACHE_NAME = 'ap3x-os-v2';
 const SHELL_ASSETS = [
   '/','/index.html','/manifest.json','/src/styles/styles.css',
   '/src/app.js','/src/storage.js','/src/router.js',
@@ -10,6 +10,7 @@ const SHELL_ASSETS = [
   '/src/pages/DashboardPage.js','/src/pages/ProjectsPage.js',
   '/src/pages/ProjectDetailPage.js','/src/pages/PromptsPage.js',
   '/src/pages/ErrorCentrePage.js','/src/pages/RepairPlansPage.js',
+  '/src/pages/KeyVaultPage.js','/src/pages/AIPlaygroundPage.js',
   '/src/pages/ImportExportPage.js','/src/pages/SettingsPage.js',
   '/src/utils/classifiers.js','/src/utils/validators.js',
   '/src/utils/formatters.js','/src/utils/sampleData.js'
