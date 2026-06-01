@@ -1,4 +1,8 @@
-const routes = { '/':'dashboard','/projects':'projects','/prompts':'prompts','/errors':'errors','/repair-plans':'repair-plans','/import-export':'import-export','/settings':'settings' };
+const routes = {
+  '/':'dashboard','/projects':'projects','/prompts':'prompts','/errors':'errors',
+  '/repair-plans':'repair-plans','/import-export':'import-export',
+  '/key-vault':'key-vault','/ai-playground':'ai-playground','/settings':'settings'
+};
 let _onNavigate = null;
 export function initRouter(onNavigate) { _onNavigate = onNavigate; window.addEventListener('hashchange', handleRoute); handleRoute(); }
 export function navigate(path) { window.location.hash = path; }
