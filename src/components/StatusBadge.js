@@ -1,0 +1,6 @@
+const statusClassMap = { 'Working':'badge-working','Broken':'badge-broken','Needs Fix':'badge-needs-fix','Needs Refactor':'badge-needs-refactor','Deployment Failed':'badge-deployment-failed','Abandoned':'badge-abandoned','Rebuild Candidate':'badge-rebuild-candidate','Investor Ready':'badge-investor-ready','Portfolio Ready':'badge-portfolio-ready','Archived':'badge-archived','Unresolved':'badge-unresolved','Investigating':'badge-investigating','Fixed':'badge-fixed','Ignored':'badge-ignored' };
+const priorityClassMap = { Low:'badge-priority-low',Medium:'badge-priority-medium',High:'badge-priority-high',Critical:'badge-priority-critical' };
+const severityClassMap = { Low:'badge-severity-low',Medium:'badge-severity-medium',High:'badge-severity-high',Critical:'badge-severity-critical' };
+export function renderStatusBadge(status) { return `<span class="badge ${statusClassMap[status]||'badge-archived'}">${status}</span>`; }
+export function renderPriorityBadge(priority) { return `<span class="badge ${priorityClassMap[priority]||'badge-priority-low'}">${priority}</span>`; }
+export function renderSeverityBadge(severity) { return `<span class="badge ${severityClassMap[severity]||'badge-severity-low'}">${severity}</span>`; }
