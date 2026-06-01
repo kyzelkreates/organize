@@ -1,7 +1,9 @@
 const STORAGE_KEY = 'ap3x_os_state';
 export const DEFAULT_STATE = {
-  app: { name: 'AP3X PROJECT RESCUE OS\u2122', version: '1.0.0', owner: 'Kyzel Kreates', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
-  projects: [], prompts: [], errors: [], repairPlans: [], tags: [], activityLog: [],
+  app: { name: 'AP3X PROJECT RESCUE OS\u2122', version: '1.1.0', owner: 'Kyzel Kreates', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
+  projects: [], prompts: [], errors: [], repairPlans: [],
+  keys: [], aiChatHistory: [],
+  tags: [], activityLog: [],
   settings: { theme: 'dark', accent: '#00f5ff', compactMode: false, showDemoData: false }
 };
 let _state = null;
